@@ -1016,18 +1016,61 @@ ul {
   margin: 0 0 24px;
 }
 
-.contato-row {
+.contato-card {
   display: flex;
+  flex-wrap: wrap;
   gap: 16px;
   margin-bottom: 20px;
 }
 
-.contato-box {
+.contato-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
   background-color: var(--box-bg);
   padding: 12px 20px;
   border-radius: 4px;
+}
+
+.contato-item[hidden] {
+  display: none;
+}
+
+.contato-texto {
   font-weight: 600;
   font-size: 0.95rem;
+  color: var(--text-dark);
+}
+
+.contato-acoes {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.btn-contato-acao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--border-light);
+  background-color: var(--card-bg);
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-contato-acao:hover {
+  border-color: var(--gold);
+}
+
+.btn-contato-acao.copiado {
+  border-color: var(--gold-dark);
+  background-color: var(--gold);
 }
 
 .contato hr {
@@ -1570,7 +1613,7 @@ ul {
     justify-content: center;
   }
 
-  .contato-row {
+  .contato-card {
     flex-direction: column;
   }
 

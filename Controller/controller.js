@@ -775,9 +775,17 @@ function mostrarDetalheVaga(vaga) {
 
   const contatoTel = document.querySelector("#contato-tel");
   contatoTel.hidden = !vaga.telefone;
-  if (vaga.telefone) contatoTel.textContent = `Tel: ${vaga.telefone}`;
+  if (vaga.telefone) {
+    const digitos = vaga.telefone.replace(/\D/g, "");
+    contatoTel.querySelector(".contato-texto").textContent = `Tel: ${vaga.telefone}`;
+    contatoTel.querySelector(".btn-copiar").dataset.copiar = vaga.telefone;
+    contatoTel.querySelector(".btn-enviar").href = `https://wa.me/55${digitos}`;
+  }
 
-  document.querySelector("#contato-email").textContent = `Email: ${vaga.email}`;
+  const contatoEmail = document.querySelector("#contato-email");
+  contatoEmail.querySelector(".contato-texto").textContent = `Email: ${vaga.email}`;
+  contatoEmail.querySelector(".btn-copiar").dataset.copiar = vaga.email;
+  contatoEmail.querySelector(".btn-enviar").href = `mailto:${vaga.email}`;
 
   const contatoLink = document.querySelector("#contato-link");
   contatoLink.hidden = !vaga.link_externo;
@@ -897,5 +905,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
     localStorage.setItem("tema", novoTema);
     atualizarBotaoTema();
+  });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const contato = document.querySelector(".contato");
+  if (!contato) {
+    return;
+  }
+
+  contato.addEventListener("click", async (evento) => {
+    const botao = evento.target.closest(".btn-copiar");
+    if (!botao) {
+      return;
+    }
+
+    try {
+      await navigator.clipboard.writeText(botao.dataset.copiar || "");
+      const textoOriginal = botao.textContent;
+      botao.textContent = "✅";
+      botao.classList.add("copiado");
+      setTimeout(() => {
+        botao.textContent = textoOriginal;
+        botao.classList.remove("copiado");
+      }, 1500);
+    } catch (erro) {
+      console.error("Não foi possível copiar:", erro);
+    }
   });
 });
