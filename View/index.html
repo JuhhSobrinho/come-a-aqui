@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Começa Aqui</title>
+    <script>
+      (function () {
+        var tema = localStorage.getItem("tema");
+        if (tema === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Euphoria+Script&family=Playfair+Display:ital@1&family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="pagina-inicial">
+    <header class="navbar">
+      <nav class="nav-links">
+        <a href="index.html" class="logo">Começa Aqui</a>
+        <a href="vagas.html">Area do Candidato</a>
+        <a href="contratante-login.html">Area do Contratante</a>
+      </nav>
+      <div class="navbar-direita">
+        <a href="#sobre" class="nav-sobre">Sobre</a>
+        <button type="button" id="tema-toggle" class="tema-toggle" aria-label="Alternar tema claro/escuro"></button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-title-wrap">
+          <h1 class="hero-title">Começa Aqui</h1>
+        </div>
+
+        <div class="choice-grid">
+          <div class="choice-card">
+            <a href="vagas.html" class="btn-gold">Candidato</a>
+            <p class="choice-text">
+              Veja vagas reais, com salário, descrição completa e o contato
+              direto do RH — sem cadastros intermináveis ou dezenas de testes
+              para chegar a uma entrevista.
+            </p>
+            <p class="choice-text">
+              Filtre por cidade, modalidade, nível e tipo de contratação,
+              ordene pelas mais recentes e salve as vagas que mais te
+              interessam para não perder de vista depois.
+            </p>
+            <img
+              src="assets/preview-candidato.png"
+              alt="Tela da área do candidato mostrando a lista de vagas e os detalhes de uma vaga selecionada"
+              class="choice-preview choice-preview-claro"
+            />
+            <img
+              src="assets/preview-candidato-dark.jpg"
+              alt="Tela da área do candidato mostrando a lista de vagas e os detalhes de uma vaga selecionada, em modo escuro"
+              class="choice-preview choice-preview-escuro"
+            />
+          </div>
+
+          <div class="choice-divider"></div>
+
+          <div class="choice-card">
+            <a href="contratante-login.html" class="btn-gold">Recrutador</a>
+            <ul class="choice-list">
+              <li>Publique sua vaga em poucos minutos</li>
+              <li>Fale direto com o candidato, sem intermediários</li>
+              <li>Sem taxas por divulgação</li>
+              <li>Gerencie todas as suas vagas em um só lugar</li>
+              <li>Pause, reative ou exclua vagas quando quiser</li>
+              <li>Acompanhe o status de cada vaga publicada</li>
+            </ul>
+            <img
+              src="assets/preview-contratante.png"
+              alt="Tela do painel do contratante mostrando o dashboard com a lista de vagas publicadas"
+              class="choice-preview choice-preview-claro"
+            />
+            <img
+              src="assets/preview-contratante-dark.jpg"
+              alt="Tela do painel do contratante mostrando o dashboard com a lista de vagas publicadas, em modo escuro"
+              class="choice-preview choice-preview-escuro"
+            />
+          </div>
+        </div>
+
+        <div class="hero-destaque">
+          <div class="hero-texto-institucional">
+            <h3 class="texto-institucional-titulo">Menos burocracia. Mais oportunidades.</h3>
+            <p class="texto-institucional-paragrafo">
+              Encontrar um emprego não deveria ser uma jornada interminável de
+              formulários, testes e processos seletivos sem retorno. Em um
+              mercado cada vez mais competitivo, o tempo de quem busca uma
+              oportunidade também importa — e merece ser respeitado.
+            </p>
+            <p class="texto-institucional-paragrafo">
+              O <strong>Começa Aqui</strong> nasceu para simplificar esse
+              caminho. Aproximamos candidatos e recrutadores, priorizamos a
+              transparência e facilitamos o contato direto entre quem procura
+              uma oportunidade e quem deseja contratar. Menos etapas
+              desnecessárias, menos barreiras e mais espaço para o que
+              realmente importa:
+              <strong>conectar pessoas a oportunidades reais.</strong>
+            </p>
+          </div>
+
+          <div class="hero-institucional">
+            <p class="institucional-eyebrow">Começa Aqui &middot; Nosso Propósito</p>
+            <h3 class="institucional-titulo">
+              Seu próximo passo profissional começa com menos obstáculos.
+            </h3>
+            <p class="institucional-corte">
+              <span class="corte-link" tabindex="0">
+                <span class="corte-link-cima" aria-hidden="true">Corte a dificuldade.</span>
+                <span class="corte-link-baixo">Corte a dificuldade.</span>
+              </span>
+            </p>
+            <p class="institucional-encontre">Encontre oportunidades.</p>
+            <div class="institucional-divisor"></div>
+            <p class="institucional-fechamento">
+              Menos burocracia. Mais conexão entre quem procura e quem contrata.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="sobre" class="sobre">
+        <div class="sobre-conteudo">
+          <h2 class="sobre-title">Sobre</h2>
+          <div class="sobre-text">
+            <p>
+              O Começa Aqui é uma plataforma de vagas de emprego pensada para
+              encurtar a distância entre quem contrata e quem procura uma
+              oportunidade. Nada de ser redirecionado por dez sites diferentes ou
+              preencher o mesmo teste várias vezes.
+            </p>
+            <p>
+              Aqui a vaga já vem com o essencial: salário, descrição completa e o
+              contato real de quem está do outro lado — telefone, e-mail ou link
+              direto para a empresa.
+            </p>
+            <p>
+              Este é um projeto de aprendizagem desenvolvido no Senac.
+            </p>
+          </div>
+
+          <div class="sobre-contato">
+            <span class="sobre-contato-item">Instagram: @comecaaqui</span>
+            <span class="sobre-contato-item">Email Senac: contato@senac.br</span>
+          </div>
+        </div>
+
+        <div class="sobre-assinatura">
+          <span class="assinatura-texto">
+            Começa
+            <span class="assinatura-metade-cima" aria-hidden="true">Começa</span>
+            <span class="assinatura-metade-baixo" aria-hidden="true">Começa</span>
+            <span class="assinatura-faixa" aria-hidden="true">Aqui e Agora</span>
+          </span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>&copy; 2026 Começa Aqui</p>
+    </footer>
+
+    <script src="../Controller/controller.js"></script>
+  </body>
+</html>

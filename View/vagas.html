@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Area do Candidato - Começa Aqui</title>
+  <script>
+    (function () {
+      var tema = localStorage.getItem("tema");
+      if (tema === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Euphoria+Script&family=Playfair+Display:ital@1&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <nav class="nav-links">
+      <a href="index.html" class="logo">Começa Aqui</a>
+      <a href="vagas.html" class="active">Area do Candidato</a>
+      <a href="contratante-login.html">Area do Contratante</a>
+    </nav>
+    <div class="navbar-direita">
+      <a href="index.html#sobre" class="nav-sobre">Sobre</a>
+      <button type="button" id="tema-toggle" class="tema-toggle" aria-label="Alternar tema claro/escuro"></button>
+    </div>
+  </header>
+
+  <main class="vagas-layout">
+    <div class="vagas-sidebar">
+      <div class="vagas-busca">
+        <div class="busca-row">
+          <input
+            type="search"
+            class="busca-input"
+            placeholder="Buscar por cargo ou empresa"
+            aria-label="Buscar por cargo ou empresa"
+          />
+          <button
+            type="button"
+            class="btn-filtros-toggle"
+            aria-expanded="false"
+            aria-controls="painel-filtros"
+          >
+            Filtros <span class="icone-chevron">▾</span>
+          </button>
+        </div>
+
+        <div class="painel-filtros" id="painel-filtros" hidden>
+          <label class="filtro-checkbox">
+            <input type="checkbox" id="filtro-salvas" />
+            Apenas vagas salvas
+          </label>
+
+          <select class="filtro-select" id="filtro-ordenar" aria-label="Ordenar por data">
+            <option value="recentes">Mais recentes</option>
+            <option value="antigas">Mais antigas</option>
+          </select>
+
+          <div class="filtros-grid">
+            <select class="filtro-select" id="filtro-cidade" aria-label="Filtrar por cidade">
+              <option value="">Cidade</option>
+            </select>
+
+            <select class="filtro-select" id="filtro-modalidade" aria-label="Filtrar por modalidade">
+              <option value="">Modalidade</option>
+              <option value="Presencial">Presencial</option>
+              <option value="Híbrido">Híbrido</option>
+              <option value="Remoto">Remoto</option>
+            </select>
+
+            <select class="filtro-select" id="filtro-nivel" aria-label="Filtrar por nível de experiência">
+              <option value="">Nível</option>
+              <option value="Estágio">Estágio</option>
+              <option value="Júnior">Júnior</option>
+              <option value="Pleno">Pleno</option>
+              <option value="Sênior">Sênior</option>
+            </select>
+
+            <select class="filtro-select" id="filtro-contratacao" aria-label="Filtrar por tipo de contratação">
+              <option value="">Contratação</option>
+              <option value="CLT">CLT</option>
+              <option value="PJ">PJ</option>
+              <option value="Estágio">Estágio</option>
+            </select>
+          </div>
+
+          <select class="filtro-select" id="filtro-salario" aria-label="Filtrar por faixa salarial">
+            <option value="">Qualquer salário</option>
+            <option value="0-1500">Até R$ 1.500</option>
+            <option value="1501-2000">R$ 1.501 a R$ 2.000</option>
+            <option value="2001-3000">R$ 2.001 a R$ 3.000</option>
+            <option value="3001-999999">Acima de R$ 3.000</option>
+          </select>
+
+          <button type="button" class="btn-limpar-filtros">Limpar filtros</button>
+        </div>
+      </div>
+
+      <aside class="vagas-list" id="vagas-lista">
+        <p class="habilidades-carregando">Carregando vagas...</p>
+        <p class="vagas-sem-resultado" hidden>Nenhuma vaga encontrada.</p>
+      </aside>
+    </div>
+
+    <article class="vaga-detail" id="vaga-detail">
+      <div class="vaga-detail-header">
+        <div>
+          <h1 id="detalhe-cargo">Carregando...</h1>
+          <p class="vaga-local" id="detalhe-local"></p>
+          <p class="vaga-empresa" id="detalhe-empresa"></p>
+        </div>
+        <div class="vaga-detail-actions">
+          <span class="vaga-salario" id="detalhe-salario"></span>
+          <button class="btn-salvar-detail" id="detalhe-btn-salvar" hidden>☆ Salvar vaga</button>
+        </div>
+      </div>
+
+      <h2 class="descricao-title">Descrição Da Vaga</h2>
+      <div class="descricao-text" id="detalhe-descricao"></div>
+    </article>
+
+    <aside class="vaga-dados">
+      <div class="dados-box">
+        <h3>Dados Da Vaga</h3>
+        <p class="preco" id="dados-preco"></p>
+        <p id="dados-local-modalidade"></p>
+        <p id="dados-beneficios"></p>
+      </div>
+
+      <div class="habilidades-box">
+        <h3>Habilidades Requeridas</h3>
+        <ul id="dados-habilidades"></ul>
+      </div>
+    </aside>
+
+    <section class="contato">
+      <h2>Contato</h2>
+      <div class="contato-row">
+        <span class="contato-box" id="contato-tel" hidden></span>
+        <span class="contato-box" id="contato-email"></span>
+      </div>
+      <hr />
+      <div class="link-externo-box" id="contato-link" hidden></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Começa Aqui</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="../Model/supabase-config.js"></script>
+  <script src="../Model/model.js"></script>
+  <script src="../Controller/controller.js"></script>
+</body>
+</html>

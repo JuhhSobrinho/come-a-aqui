@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Area do Contratante - Começa Aqui</title>
+  <script>
+    (function () {
+      var tema = localStorage.getItem("tema");
+      if (tema === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Euphoria+Script&family=Playfair+Display:ital@1&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <nav class="nav-links">
+      <a href="index.html" class="logo">Começa Aqui</a>
+      <a href="vagas.html">Area do Candidato</a>
+      <a href="contratante.html" class="active">Area do Contratante</a>
+    </nav>
+    <div class="navbar-direita">
+      <a href="index.html#sobre" class="nav-sobre">Sobre</a>
+      <button type="button" id="tema-toggle" class="tema-toggle" aria-label="Alternar tema claro/escuro"></button>
+    </div>
+  </header>
+
+  <main class="dashboard">
+    <div class="dashboard-header">
+      <div>
+        <p class="dashboard-saudacao" id="dashboard-saudacao">Carregando...</p>
+        <h1 class="dashboard-titulo">Minhas Vagas</h1>
+      </div>
+      <div class="dashboard-header-acoes">
+        <a href="contratante-nova-vaga.html" class="btn-primario btn-nova-vaga">+ Nova Vaga</a>
+        <button type="button" class="link-secundario" id="btn-sair">Sair</button>
+      </div>
+    </div>
+
+    <div class="dashboard-toolbar">
+      <input
+        type="search"
+        class="busca-input"
+        placeholder="Buscar por cargo"
+        aria-label="Buscar por cargo"
+      />
+      <select class="filtro-select" id="filtro-status" aria-label="Filtrar por status">
+        <option value="">Todos os status</option>
+        <option value="Ativa">Ativa</option>
+        <option value="Pausada">Pausada</option>
+        <option value="Encerrada">Encerrada</option>
+      </select>
+    </div>
+
+    <div class="vagas-contratante-list" id="vagas-contratante-list">
+      <p class="habilidades-carregando">Carregando suas vagas...</p>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Começa Aqui</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="../Model/supabase-config.js"></script>
+  <script src="../Model/model.js"></script>
+  <script src="../Controller/controller.js"></script>
+</body>
+</html>

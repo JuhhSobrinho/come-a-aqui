@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar - Área do Contratante</title>
+  <script>
+    (function () {
+      var tema = localStorage.getItem("tema");
+      if (tema === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Euphoria+Script&family=Playfair+Display:ital@1&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="pagina-inicial">
+  <header class="navbar">
+    <nav class="nav-links">
+      <a href="index.html" class="logo">Começa Aqui</a>
+      <a href="vagas.html">Area do Candidato</a>
+      <a href="contratante-login.html" class="active">Area do Contratante</a>
+    </nav>
+    <div class="navbar-direita">
+      <a href="index.html#sobre" class="nav-sobre">Sobre</a>
+      <button type="button" id="tema-toggle" class="tema-toggle" aria-label="Alternar tema claro/escuro"></button>
+    </div>
+  </header>
+
+  <main class="login-wrap">
+    <div class="login-card">
+      <div class="login-tabs">
+        <button type="button" class="login-tab active" data-form-alvo="form-entrar">Entrar</button>
+        <button type="button" class="login-tab" data-form-alvo="form-cadastro">Criar conta</button>
+      </div>
+
+      <form class="form-contratante" id="form-entrar">
+        <div class="form-group">
+          <label class="form-label" for="entrar-email">E-mail</label>
+          <input class="form-input" type="email" id="entrar-email" placeholder="empresa@exemplo.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="entrar-senha">Senha</label>
+          <input class="form-input" type="password" id="entrar-senha" placeholder="••••••••" required />
+        </div>
+        <p class="form-feedback" id="entrar-feedback"></p>
+        <button type="submit" class="btn-primario">Entrar</button>
+        <a href="#" class="link-secundario">Esqueci minha senha</a>
+      </form>
+
+      <form class="form-contratante" id="form-cadastro" hidden>
+        <div class="form-group">
+          <label class="form-label" for="cadastro-empresa">Nome da empresa</label>
+          <input class="form-input" type="text" id="cadastro-empresa" placeholder="Città Telecom LTDA" required />
+        </div>
+
+        <div class="form-group">
+          <span class="form-label">Tipo de documento</span>
+          <div class="documento-tipo-escolha">
+            <label>
+              <input type="radio" name="tipo-documento" value="cnpj" checked />
+              CNPJ
+            </label>
+            <label>
+              <input type="radio" name="tipo-documento" value="cpf" />
+              CPF
+            </label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cadastro-documento">Número do documento</label>
+          <input
+            class="form-input"
+            type="text"
+            id="cadastro-documento"
+            inputmode="numeric"
+            placeholder="00.000.000/0000-00"
+            maxlength="18"
+            required
+          />
+          <p class="form-feedback" id="cadastro-documento-feedback"></p>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="cadastro-email">E-mail</label>
+          <input class="form-input" type="email" id="cadastro-email" placeholder="empresa@exemplo.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cadastro-senha">Senha</label>
+          <input class="form-input" type="password" id="cadastro-senha" placeholder="••••••••" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="cadastro-confirmar">Confirmar senha</label>
+          <input class="form-input" type="password" id="cadastro-confirmar" placeholder="••••••••" required />
+        </div>
+        <p class="form-feedback" id="cadastro-feedback"></p>
+        <button type="submit" class="btn-primario" id="btn-criar-conta">Criar conta</button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Começa Aqui</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="../Model/supabase-config.js"></script>
+  <script src="../Model/model.js"></script>
+  <script src="../Controller/controller.js"></script>
+</body>
+</html>

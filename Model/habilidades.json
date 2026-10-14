@@ -1,0 +1,191 @@
+[
+  {
+    "categoria": "Comportamentais",
+    "habilidades": [
+      "Pró atividade",
+      "Boa comunicação",
+      "Trabalho em equipe",
+      "Organização",
+      "Pontualidade",
+      "Liderança",
+      "Resiliência",
+      "Flexibilidade",
+      "Pensamento crítico",
+      "Gestão do tempo",
+      "Criatividade",
+      "Empatia"
+    ]
+  },
+  {
+    "categoria": "Atendimento e Vendas",
+    "habilidades": [
+      "Atendimento ao cliente",
+      "Pós-venda",
+      "Negociação",
+      "Televendas",
+      "Vendas consultivas",
+      "Prospecção de clientes",
+      "Relacionamento com o cliente",
+      "Recepção",
+      "Telemarketing",
+      "Suporte ao cliente"
+    ]
+  },
+  {
+    "categoria": "Administrativo e Escritório",
+    "habilidades": [
+      "Pacote Office",
+      "Excel avançado",
+      "Excel intermediário",
+      "Rotinas administrativas",
+      "Arquivo e documentação",
+      "Agendamento",
+      "Digitação",
+      "Atendimento telefônico",
+      "Gestão de contratos",
+      "Redação de e-mails corporativos"
+    ]
+  },
+  {
+    "categoria": "Tecnologia da Informação",
+    "habilidades": [
+      "Lógica de programação",
+      "JavaScript",
+      "Python",
+      "Java",
+      "HTML e CSS",
+      "Banco de dados SQL",
+      "Git e versionamento",
+      "Metodologias ágeis (Scrum)",
+      "Suporte técnico",
+      "Redes de computadores",
+      "Segurança da informação",
+      "Desenvolvimento mobile",
+      "Cloud computing (AWS/Azure)"
+    ]
+  },
+  {
+    "categoria": "Saúde e Medicina",
+    "habilidades": [
+      "Atendimento a pacientes",
+      "Primeiros socorros",
+      "Técnicas de enfermagem",
+      "Administração de medicamentos",
+      "Verificação de sinais vitais",
+      "Terminologia médica",
+      "Biossegurança",
+      "Prontuário eletrônico",
+      "Vacinação",
+      "Cuidados paliativos"
+    ]
+  },
+  {
+    "categoria": "Educação",
+    "habilidades": [
+      "Didática",
+      "Planejamento de aulas",
+      "Avaliação de aprendizagem",
+      "Educação inclusiva",
+      "Gestão de sala de aula",
+      "Tecnologias educacionais",
+      "Alfabetização",
+      "Libras"
+    ]
+  },
+  {
+    "categoria": "Engenharia e Construção",
+    "habilidades": [
+      "Leitura de projetos",
+      "AutoCAD",
+      "Normas regulamentadoras (NR)",
+      "Gestão de obras",
+      "Orçamento de obras",
+      "Topografia",
+      "Segurança do trabalho",
+      "Controle de qualidade"
+    ]
+  },
+  {
+    "categoria": "Logística e Transporte",
+    "habilidades": [
+      "CNH categoria B",
+      "CNH categoria D",
+      "Direção defensiva",
+      "Gestão de estoque",
+      "Roteirização",
+      "Operação de empilhadeira",
+      "Controle de frotas",
+      "Supply chain"
+    ]
+  },
+  {
+    "categoria": "Marketing e Design",
+    "habilidades": [
+      "Marketing digital",
+      "Gestão de redes sociais",
+      "Copywriting",
+      "Design gráfico",
+      "Photoshop",
+      "Illustrator",
+      "Edição de vídeo",
+      "SEO",
+      "Tráfego pago",
+      "Branding"
+    ]
+  },
+  {
+    "categoria": "Finanças e Contabilidade",
+    "habilidades": [
+      "Contas a pagar e receber",
+      "Conciliação bancária",
+      "Fluxo de caixa",
+      "Lançamentos contábeis",
+      "Análise financeira",
+      "Excel para finanças",
+      "Legislação tributária"
+    ]
+  },
+  {
+    "categoria": "Jurídico",
+    "habilidades": [
+      "Elaboração de contratos",
+      "Rotinas cartorárias",
+      "Direito trabalhista",
+      "Direito civil",
+      "Peticionamento eletrônico",
+      "Atendimento jurídico"
+    ]
+  },
+  {
+    "categoria": "Gastronomia e Hotelaria",
+    "habilidades": [
+      "Técnicas de cozinha",
+      "Boas práticas de manipulação de alimentos",
+      "Atendimento em restaurante",
+      "Gestão de bares",
+      "Recepção hoteleira",
+      "Governança hoteleira"
+    ]
+  },
+  {
+    "categoria": "Recursos Humanos",
+    "habilidades": [
+      "Recrutamento e seleção",
+      "Folha de pagamento",
+      "Treinamento e desenvolvimento",
+      "Legislação trabalhista",
+      "Employer branding",
+      "Gestão de benefícios"
+    ]
+  },
+  {
+    "categoria": "Idiomas",
+    "habilidades": [
+      "Inglês básico",
+      "Inglês intermediário",
+      "Inglês avançado",
+      "Espanhol básico",
+      "Espanhol intermediário"
+    ]
+  }
+]

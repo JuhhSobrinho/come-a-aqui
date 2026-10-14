@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "comeca-aqui",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "5507"],
+      "port": 5507
+    }
+  ]
+}

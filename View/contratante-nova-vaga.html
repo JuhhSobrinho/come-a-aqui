@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nova Vaga - Area do Contratante</title>
+  <script>
+    (function () {
+      var tema = localStorage.getItem("tema");
+      if (tema === "dark") {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Euphoria+Script&family=Playfair+Display:ital@1&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="navbar">
+    <nav class="nav-links">
+      <a href="index.html" class="logo">Começa Aqui</a>
+      <a href="vagas.html">Area do Candidato</a>
+      <a href="contratante.html" class="active">Area do Contratante</a>
+    </nav>
+    <div class="navbar-direita">
+      <a href="index.html#sobre" class="nav-sobre">Sobre</a>
+      <button type="button" id="tema-toggle" class="tema-toggle" aria-label="Alternar tema claro/escuro"></button>
+    </div>
+  </header>
+
+  <main class="form-vaga-wrap">
+    <div class="form-vaga-header">
+      <a href="contratante.html" class="link-secundario">← Voltar para Minhas Vagas</a>
+      <h1 class="dashboard-titulo">Publicar Nova Vaga</h1>
+    </div>
+
+    <form class="form-vaga" id="form-nova-vaga">
+      <div class="form-vaga-secao">
+        <h2 class="form-vaga-secao-titulo">Informações básicas</h2>
+
+        <div class="form-group">
+          <label class="form-label" for="vaga-cargo">Cargo</label>
+          <input class="form-input" type="text" id="vaga-cargo" placeholder="Ex: Atendimento - Suporte Cliente" required />
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="vaga-cidade">Cidade</label>
+            <input class="form-input" type="text" id="vaga-cidade" placeholder="Ex: Pinda/SP" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="vaga-modalidade">Modalidade</label>
+            <select class="form-input" id="vaga-modalidade" required>
+              <option value="">Selecione</option>
+              <option value="Presencial">Presencial</option>
+              <option value="Híbrido">Híbrido</option>
+              <option value="Remoto">Remoto</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="vaga-nivel">Nível</label>
+            <select class="form-input" id="vaga-nivel" required>
+              <option value="">Selecione</option>
+              <option value="Estágio">Estágio</option>
+              <option value="Júnior">Júnior</option>
+              <option value="Pleno">Pleno</option>
+              <option value="Sênior">Sênior</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="vaga-contratacao">Tipo de contratação</label>
+            <select class="form-input" id="vaga-contratacao" required>
+              <option value="">Selecione</option>
+              <option value="CLT">CLT</option>
+              <option value="PJ">PJ</option>
+              <option value="Estágio">Estágio</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="vaga-salario">Salário (R$)</label>
+          <input class="form-input" type="number" id="vaga-salario" placeholder="Ex: 1400" min="0" step="0.01" required />
+        </div>
+      </div>
+
+      <div class="form-vaga-secao">
+        <h2 class="form-vaga-secao-titulo">Descrição Da Vaga</h2>
+        <div class="form-group">
+          <label class="form-label" for="vaga-descricao">Descrição completa</label>
+
+          <div class="exemplo-descricao">
+            <p class="exemplo-descricao-titulo">
+              Modelo sugerido — direto ao ponto, sem enrolação:
+            </p>
+            <p>
+              <strong>Sobre a empresa:</strong> missão, visão e valores em
+              poucas linhas — ex.: "Somos uma empresa de telecom que acredita
+              em atendimento humano e ágil. Nossa missão é conectar pessoas,
+              nossa visão é ser referência em qualidade no interior de SP, e
+              valorizamos transparência, respeito e evolução constante."
+            </p>
+            <p>
+              <strong>Responsabilidades:</strong> atendimento ao cliente por
+              telefone, chat e e-mail, registro de ocorrências no sistema.
+            </p>
+            <p>
+              <strong>Requisitos:</strong> ensino médio completo, boa
+              comunicação, conhecimento básico de informática.
+            </p>
+            <p>
+              <strong>Diferenciais (opcional):</strong> experiência anterior
+              em atendimento ao cliente.
+            </p>
+          </div>
+
+          <textarea
+            class="form-input form-textarea"
+            id="vaga-descricao"
+            rows="8"
+            placeholder="Escreva seguindo o modelo acima. Evite textos muito longos — poucos parágrafos, direto ao ponto."
+            required
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="form-vaga-secao">
+        <h2 class="form-vaga-secao-titulo">Dados Da Vaga</h2>
+        <div class="form-group">
+          <label class="form-label" for="vaga-beneficios">Benefícios</label>
+          <textarea class="form-input form-textarea" id="vaga-beneficios" rows="3" placeholder="Ex: Assistência médica, Vale-transporte, Vale-refeição"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="busca-habilidades">Habilidades Requeridas</label>
+          <input
+            type="search"
+            class="form-input"
+            id="busca-habilidades"
+            placeholder="Buscar habilidade (ex: inglês, excel, enfermagem)"
+          />
+          <div class="habilidades-chips" id="habilidades-chips">
+            <p class="habilidades-carregando">Carregando habilidades...</p>
+          </div>
+          <label class="form-label" for="vaga-habilidades-outras">Outras habilidades (opcional)</label>
+          <textarea
+            class="form-input form-textarea"
+            id="vaga-habilidades-outras"
+            rows="2"
+            placeholder="Uma por linha, caso não esteja na lista acima"
+          ></textarea>
+        </div>
+      </div>
+
+      <div class="form-vaga-secao">
+        <h2 class="form-vaga-secao-titulo">Contato</h2>
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label" for="vaga-tel">Telefone</label>
+            <input class="form-input" type="tel" id="vaga-tel" placeholder="(12) 99999-9999" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="vaga-email">E-mail</label>
+            <input class="form-input" type="email" id="vaga-email" placeholder="rh@empresa.com" required />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="vaga-link">Link Externo</label>
+          <input class="form-input" type="text" id="vaga-link" placeholder="empresa.com/vagas" />
+        </div>
+      </div>
+
+      <p class="form-feedback" id="nova-vaga-feedback"></p>
+      <div class="form-vaga-acoes">
+        <a href="contratante.html" class="btn-acao">Cancelar</a>
+        <button type="submit" class="btn-primario" id="btn-publicar-vaga">Publicar Vaga</button>
+      </div>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2026 Começa Aqui</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="../Model/supabase-config.js"></script>
+  <script src="../Model/model.js"></script>
+  <script src="../Controller/controller.js"></script>
+</body>
+</html>
