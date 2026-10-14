@@ -117,6 +117,7 @@ ul {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-dark);
+  padding-top: 10px;
   padding-bottom: 10px;
   border-bottom: 2px solid transparent;
   transition: border-color 0.2s ease;

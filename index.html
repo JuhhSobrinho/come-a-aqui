@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="refresh" content="1.5; url=View/index.html" />
+    <title>Começa Aqui</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Euphoria+Script&display=swap"
+      rel="stylesheet" />
+    <style>
+      :root {
+        --gold: #e9b64a;
+        --bg-light: #f7f6f3;
+        --text-dark: #1f1f1f;
+        --card-bg: #ffffff;
+      }
+
+      :root[data-theme="dark"] {
+        --bg-light: #2f2c2a;
+        --card-bg: #3a3633;
+        --text-dark: #f2efea;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .splash {
+        --s: 14px;
+        --hex-linha: var(--card-bg);
+        --hex-fundo: var(--bg-light);
+
+        --c: #0000, var(--hex-linha) 0.5deg 119.5deg, #0000 120deg;
+        --g1: conic-gradient(from 60deg at 56.25% calc(425% / 6), var(--c));
+        --g2: conic-gradient(from 180deg at 43.75% calc(425% / 6), var(--c));
+        --g3: conic-gradient(from -60deg at 50% calc(175% / 12), var(--c));
+        background: var(--g1), var(--g1) var(--s) calc(1.73 * var(--s)), var(--g2),
+          var(--g2) var(--s) calc(1.73 * var(--s)), var(--g3) var(--s) 0,
+          var(--g3) 0 calc(1.73 * var(--s)) var(--hex-fundo);
+        background-size: calc(2 * var(--s)) calc(3.46 * var(--s));
+
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .splash-title-wrap {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 90%;
+      }
+
+      .splash-title-wrap::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background-color: var(--gold);
+        transform: translateY(-50%);
+      }
+
+      .splash-title {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding: 0 24px;
+        font-family: "Euphoria Script", cursive;
+        font-size: clamp(4rem, 18vw, 14rem);
+        font-weight: 400;
+        color: var(--text-dark);
+        white-space: nowrap;
+        text-align: center;
+      }
+    </style>
+    <script>
+      (function () {
+        var tema = localStorage.getItem("tema");
+        if (tema === "dark") {
+          document.documentElement.setAttribute("data-theme", "dark");
+        }
+      })();
+      setTimeout(function () {
+        window.location.replace("View/index.html");
+      }, 1500);
+    </script>
+  </head>
+  <body>
+    <div class="splash">
+      <div class="splash-title-wrap">
+        <h1 class="splash-title">Começa Aqui</h1>
+      </div>
+    </div>
+  </body>
+</html>
