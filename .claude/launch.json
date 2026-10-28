@@ -4,8 +4,8 @@
     {
       "name": "comeca-aqui",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "5507"],
-      "port": 5507
+      "runtimeArgs": ["-m", "http.server", "5511"],
+      "port": 5511
     }
   ]
 }

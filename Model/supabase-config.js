@@ -2,8 +2,7 @@
 // Cole aqui os dois valores. O "anon public" é seguro de expor no front-end
 // (a segurança de verdade vem das políticas de RLS criadas em supabase-schema.sql).
 const SUPABASE_URL = "https://kedwwailzdceamtyccpj.supabase.co";
-const SUPABASE_ANON_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtlZHd3YWlsemRjZWFtdHljY3BqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTI1MzExODAsImV4cCI6MjEwODEwNzE4MH0.NzSdwVkxLjBW-QGQfWrZCuCgY_uR3wadBnh8tLuKcWM";
+const SUPABASE_ANON_KEY = "sb_publishable_LnmyI_Fk5wPytnXHJpodwQ_8pLJwsHM";
 
 window.supabaseClient = null;
 
